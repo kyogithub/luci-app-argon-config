@@ -18,7 +18,7 @@ jobs:
         cp -rf ./luasrc ./po ./root ./Makefile ./bin/luci-app-argon-config
     - name: Docker Build
       run: |
-        docker pull openwrt/sdk
+        docker pull openwrt/sdk:main-SNAPSHOT
         docker run --rm -u root -v "$(pwd)"/bin/:/home/build/openwrt/bin -v ${{ github.workspace }}/.github/workflows:/home/build/workflows openwrt/sdk /bin/sh /home/build/workflows/build.sh
     - name: Release
       env:
