@@ -1,8 +1,6 @@
 name: Release APK
 on:
   push:
-   branches:
-      - 'master'
     tags:
       - 'release-*'
 
